@@ -1,0 +1,52 @@
+<div ng-controller="mainCtrl">
+    <h1>Bill Split</h1>
+    <form class="form-inline" ng-repeat="item in invoice.items">
+        <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" class="form-control" ng-model="item.company" placeholder="Company" id="company">
+        </div>
+
+        <div class="form-group">
+            <label for="amount">Bill Amount</label>
+            <input type="number" class="form-control" ng-model="item.amount" placeholder="Bill Amount" id="amount"/>
+        </div>
+
+        <div class="form-group">
+            <label for="people">Number of People</label>
+            <input type="number" class="form-control" ng-model="item.people" placeholder="Number of People" id="people"/>
+        </div>
+
+        <div class="form-group">
+          <h4>
+            {{item.amount / item.people | currency}}
+          </h4>
+        </div>
+    </form>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Company</th>
+          <th>Amount Due</th>
+          <th>Number of People</th>
+          <th>Cost Per Person</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in invoice.items">
+          <td><button ng-click="addItem()" class="btn btn-primary btn-sm">Add Bill</button></td>
+          <td>{{item.company}}</td>
+          <td>{{item.amount | currency}}</td>
+          <td>{{item.people}} people</td>
+          <td>{{item.amount/item.people | currency}}</td>
+          <td>
+              <button class="btn-danger btn-sm" ng-click="removeItem($index)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="text-center">Total Cost Per Person: {{total() | currency}}</h3>
+
+</div>
