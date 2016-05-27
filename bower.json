@@ -1,0 +1,30 @@
+{
+  "name": "house_cash",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Logan Dougher <logan.dougher@gmail.com> (https://logandougher.com/)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ldougher06/house_cash",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "jquery": "^2.2.4",
+    "lodash": "^4.13.1",
+    "angular-resource": "^1.5.5",
+    "ejs": "^1.0.0"
+  }
+}
